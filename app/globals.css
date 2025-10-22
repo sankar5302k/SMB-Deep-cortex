@@ -1,0 +1,339 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to retro cinema + wild west color palette */
+  --background: #1a1410;
+  --foreground: #f5f1ed;
+  --card: #2a2420;
+  --card-foreground: #f5f1ed;
+  --popover: #2a2420;
+  --popover-foreground: #f5f1ed;
+  --primary: #c9a961;
+  --primary-foreground: #1a1410;
+  --secondary: #8b4513;
+  --secondary-foreground: #f5f1ed;
+  --muted: #5a5450;
+  --muted-foreground: #d4cfc9;
+  --accent: #a0522d;
+  --accent-foreground: #f5f1ed;
+  --destructive: #8b0000;
+  --destructive-foreground: #f5f1ed;
+  --border: #3a3430;
+  --input: #3a3430;
+  --ring: #c9a961;
+  --chart-1: #c9a961;
+  --chart-2: #8b4513;
+  --chart-3: #a0522d;
+  --chart-4: #6b5d52;
+  --chart-5: #4a4440;
+  --radius: 0.25rem;
+  --sidebar: #2a2420;
+  --sidebar-foreground: #f5f1ed;
+  --sidebar-primary: #c9a961;
+  --sidebar-primary-foreground: #1a1410;
+  --sidebar-accent: #8b4513;
+  --sidebar-accent-foreground: #f5f1ed;
+  --sidebar-border: #3a3430;
+  --sidebar-ring: #c9a961;
+}
+
+.dark {
+  --background: #1a1410;
+  --foreground: #f5f1ed;
+  --card: #2a2420;
+  --card-foreground: #f5f1ed;
+  --popover: #2a2420;
+  --popover-foreground: #f5f1ed;
+  --primary: #c9a961;
+  --primary-foreground: #1a1410;
+  --secondary: #8b4513;
+  --secondary-foreground: #f5f1ed;
+  --muted: #5a5450;
+  --muted-foreground: #d4cfc9;
+  --accent: #a0522d;
+  --accent-foreground: #f5f1ed;
+  --destructive: #8b0000;
+  --destructive-foreground: #f5f1ed;
+  --border: #3a3430;
+  --input: #3a3430;
+  --ring: #c9a961;
+  --chart-1: #c9a961;
+  --chart-2: #8b4513;
+  --chart-3: #a0522d;
+  --chart-4: #6b5d52;
+  --chart-5: #4a4440;
+  --sidebar: #2a2420;
+  --sidebar-foreground: #f5f1ed;
+  --sidebar-primary: #c9a961;
+  --sidebar-primary-foreground: #1a1410;
+  --sidebar-accent: #8b4513;
+  --sidebar-accent-foreground: #f5f1ed;
+  --sidebar-border: #3a3430;
+  --sidebar-ring: #c9a961;
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: calc(var(--radius));
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added animated wild west background with desert and saloon elements */
+@keyframes tumbleweed {
+  0% {
+    transform: translateX(-100%) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes dustParticles {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(100vh) translateX(50px);
+    opacity: 0;
+  }
+}
+
+@keyframes swingSign {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes sunsetGlow {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.wild-west-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #8b6f47 0%, #a0826d 50%, #6b5d52 100%);
+  z-index: -1;
+  overflow: hidden;
+}
+
+.tumbleweed {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #5a5450;
+  border-radius: 50%;
+  animation: tumbleweed 15s linear infinite;
+  opacity: 0.4;
+}
+
+.dust-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #d4cfc9;
+  border-radius: 50%;
+  animation: dustParticles 20s linear infinite;
+  opacity: 0.3;
+}
+
+.swing-sign {
+  animation: swingSign 3s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.sunset-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: radial-gradient(ellipse at center top, rgba(201, 169, 97, 0.2) 0%, transparent 70%);
+  animation: sunsetGlow 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes filmRoll {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sciFiScan {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes filmFlicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+.film-roll {
+  animation: filmRoll 3s linear infinite;
+}
+
+.typewriter {
+  animation: typewriter 0.5s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 0.6s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInFromRight 0.6s ease-out;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.scifi-scan {
+  animation: sciFiScan 1.5s ease-out forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.film-flicker {
+  animation: filmFlicker 0.1s ease-in-out;
+}
