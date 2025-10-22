@@ -35,10 +35,10 @@ export default function Hero({ setCurrentPage }: HeroProps) {
 
       {/* Film reel decorations - Added z-5 */}
       <div className="absolute top-32 left-10 opacity-20 z-5">
-        <Film className="w-32 h-32 text-primary" />
+
       </div>
       <div className="absolute bottom-32 right-10 opacity-20 z-5">
-        <Film className="w-32 h-32 text-accent" />
+
       </div>
 
       {/* Main Content - Already z-10, which is correct */}
