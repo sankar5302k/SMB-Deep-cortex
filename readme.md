@@ -9,7 +9,7 @@
 An AI-powered application for generating multi-genre stories and instantly transforming them into production-ready scripts. Powered by the high-speed GPT oss 120b model.
 
 ![SMB Hero Page](./public/SMB.png) 
-*(Note: Please replace this with a full screenshot of your app's hero page)*
+
 
 ## 🎬 Overview
 
